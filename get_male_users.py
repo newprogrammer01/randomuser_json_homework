@@ -7,14 +7,12 @@ def get_male_users(data:dict)->list:
     Returns:
         list: A list of users
     """
-    users=data['users']
-    ans=0
-    for i in users:
-        if i['gender']=='male':
-            ans+=1
-    
-    return ans
-    # return data
-
+    users=data["users"]
+    list=[]
+    for i in range(len(users)):
+        if users[i]['gender']=="male":
+            list.append(users[i]['name']['first'])
+    return list
 data=read_json('users.json')
 print(get_male_users(data))
+
